@@ -12,132 +12,130 @@ input[type=number] {
 }
 </style>
 <div class="container">
-    <section id="cover">
-        <div id="cover-caption">
-            <div id="container" class="container shadow p-3 mb-4 mt-3 bg-white rounded">
-                <div class="row">
-                    <div class="col-sm-10 offset-sm-1">
-                        <h2 class="text-center pt-4 "><?= $title ?></h2>
-                        <div class="info-form"><br>
+    <div id="container" class="container shadow p-3 mb-4 mt-3 bg-white rounded">
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1">
+                <h2 class="text-center pt-4"><?= $title ?></h2>
+                <div class="info-form"><br>
 
-                            <?= form_open('admin/tambah')?>
+                    <?= form_open('admin/tambah')?>
 
-                            <div class="row">
-                                <div class="col-4">
-                                    <?= form_label('NIS', 'nis') ?>
-                                    <?= form_input([
+                    <div class="row">
+                        <div class="col-4">
+                            <?= form_label('NIS', 'nis') ?>
+                            <?= form_input([
                                 'type' => 'number',
                                 'name' => 'nis',
                                 'id' => 'nis',
                                 'class' => 'form-control',
                                 'value' => set_value("nis") 
                             ]) ?>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('nis') ?>
-                                    </small>
-                                </div>
-                            </div>
+                            <small class="form-text text-danger">
+                                <?= form_error('nis') ?>
+                            </small>
+                        </div>
+                    </div>
 
-                            <br>
+                    <br>
 
-                            <?= form_label('Nama', 'nama') ?>
-                            <?= form_input([
+                    <?= form_label('Nama', 'nama') ?>
+                    <?= form_input([
                             'type' => 'text',
                             'name' => 'nama',
                             'id' => 'nama',
                             'class' => 'form-control',
                             'value' => set_value("nama")
                             ]) ?>
+                    <small class="form-text text-danger">
+                        <?= form_error('nama') ?>
+                    </small>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <?= form_label('Tempat Lahir', 'tp_lhr') ?>
+                            <?= form_input([
+                                        'type' => 'text',
+                                        'name' => 'tp_lhr',
+                                        'id' => 'tp_lhr',
+                                        'class' => 'form-control',
+                                        'value' => set_value("tp_lhr")
+                                    ]) ?>
                             <small class="form-text text-danger">
-                                <?= form_error('nama') ?>
+                                <?= form_error('tp_lhr') ?>
                             </small>
-                            <br>
+                        </div>
 
-                            <div class="row">
-                                <div class="col-4">
-                                    <?= form_label('Tempat Lahir', 'tp_lhr') ?>
-                                    <?= form_input([
-                                'type' => 'text',
-                                'name' => 'tp_lhr',
-                                'id' => 'tp_lhr',
-                                'class' => 'form-control',
-                                'value' => set_value("tp_lhr")
-                            ]) ?>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('tp_lhr') ?>
-                                    </small>
-                                </div>
+                        <div class="col-4">
+                            <?= form_label('Tanggal Lahir', 'tg_lhr') ?>
+                            <?= form_input([
+                                        'type' => 'date',
+                                        'name' => 'tg_lhr',
+                                        'id' => 'tg_lhr',
+                                        'class' => 'form-control',
+                                        'value' => set_value("tg_lhr")
+                                    ]) ?>
+                            <small class="form-text text-danger">
+                                <?= form_error('tg_lhr') ?>
+                            </small>
+                        </div>
 
-                                <div class="col-4">
-                                    <?= form_label('Tanggal Lahir', 'tg_lhr') ?>
-                                    <?= form_input([
-                                'type' => 'date',
-                                'name' => 'tg_lhr',
-                                'id' => 'tg_lhr',
-                                'class' => 'form-control',
-                                'value' => set_value("tg_lhr")
-                            ]) ?>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('tg_lhr') ?>
-                                    </small>
-                                </div>
-
-                                <div class="col-4">
-                                    <?= form_label('Jenis Kelamin', 'gender') ?> <br>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="gender" id="L" value="Laki-Laki"
-                                            class="form-check-input" <?php echo  set_radio('gender', 'Laki-Laki'); ?> />
-                                        <label for="L" class="form-check-label">Laki-Laki</label> <br>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="gender" id="P" value="Perempuan"
-                                            class="form-check-input" <?php echo  set_radio('gender', 'Perempuan'); ?> />
-                                        <label for="P" class="form-check-label">Perempuan</label>
-                                    </div>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('gender') ?>
-                                    </small>
-                                </div>
+                        <div class="col-4">
+                            <?= form_label('Jenis Kelamin', 'gender') ?> <br>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="gender" id="L" value="Laki-Laki" class="form-check-input"
+                                    <?php echo  set_radio('gender', 'Laki-Laki'); ?> />
+                                <label for="L" class="form-check-label">Laki-Laki</label> <br>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="gender" id="P" value="Perempuan" class="form-check-input"
+                                    <?php echo  set_radio('gender', 'Perempuan'); ?> />
+                                <label for="P" class="form-check-label">Perempuan</label>
+                            </div>
+                            <small class="form-text text-danger">
+                                <?= form_error('gender') ?>
+                            </small>
+                        </div>
+                    </div>
 
-                            <br>
+                    <br>
 
-                            <div class="row">
-                                <div class="col-6">
-                                    <?= form_label('No. HP', 'no_hp') ?>
-                                    <?= form_input([
+                    <div class="row">
+                        <div class="col-6">
+                            <?= form_label('No. HP', 'no_hp') ?>
+                            <?= form_input([
                                 'type' => 'number',
                                 'name' => 'no_hp',
                                 'id' => 'no_hp',
                                 'class' => 'form-control',
                                 'value' => set_value("no_hp")
                                 ]) ?>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('no_hp') ?>
-                                    </small>
-                                </div>
+                            <small class="form-text text-danger">
+                                <?= form_error('no_hp') ?>
+                            </small>
+                        </div>
 
-                                <div class="col-6">
-                                    <?= form_label('Email', 'email') ?>
-                                    <?= form_input([
+                        <div class="col-6">
+                            <?= form_label('Email', 'email') ?>
+                            <?= form_input([
                                 'type' => 'email',
                                 'name' => 'email',
                                 'id' => 'email',
                                 'class' => 'form-control',
                                 'value' => set_value("email")
                             ]) ?>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('email') ?>
-                                    </small>
-                                </div>
-                            </div>
+                            <small class="form-text text-danger">
+                                <?= form_error('email') ?>
+                            </small>
+                        </div>
+                    </div>
 
-                            <br>
+                    <br>
 
-                            <div class="row">
-                                <div class="col-5">
-                                    <?= form_label('Kelas', 'kelas') ?>
-                                    <?php 
+                    <div class="row">
+                        <div class="col-5">
+                            <?= form_label('Kelas', 'kelas') ?>
+                            <?php 
                                 foreach ($kelas as $row) {
                                     $options[$row['id_kelas']] = $row['nama_kelas'];
                                 }
@@ -145,16 +143,16 @@ input[type=number] {
 
                                 echo form_dropdown('kelas', $newoptions, set_value('kelas'), 'class="form-control " id="kelas"')
                             ?>
-                                    <small class="form-text text-danger">
-                                        <?= form_error('kelas') ?>
-                                    </small>
-                                </div>
-                            </div>
+                            <small class="form-text text-danger">
+                                <?= form_error('kelas') ?>
+                            </small>
+                        </div>
+                    </div>
 
-                            <br>
+                    <br>
 
-                            <?= form_label('Alamat', 'alamat') ?>
-                            <?= form_textarea([
+                    <?= form_label('Alamat', 'alamat') ?>
+                    <?= form_textarea([
                                 'name' => 'alamat',
                                 'id' => 'alamat',
                                 'class' => 'form-control',
@@ -163,21 +161,19 @@ input[type=number] {
                                 'value' => set_value("alamat")
                             ], '', ['style' => 'resize:none'
                             ]) ?>
-                            <small class="form-text text-danger">
-                                <?= form_error('alamat') ?>
-                            </small>
+                    <small class="form-text text-danger">
+                        <?= form_error('alamat') ?>
+                    </small>
 
-                            <br>
+                    <br>
 
-                            <?= form_submit('tombolSubmit', 'TAMBAH', 'class="btn btn-primary"') ?>
+                    <?= form_submit('tombolSubmit', 'TAMBAH', 'class="btn btn-primary"') ?>
 
-                            <?= form_close() ?>
+                    <?= form_close() ?>
 
-                        </div>
-                        <br>
-                    </div>
                 </div>
+                <br>
             </div>
         </div>
-    </section>
+    </div>
 </div>

@@ -5,6 +5,7 @@
                         <br>
                         <h2 class="text-center"><?= $title ?></h2><br>
                         <table class="table col-sm-10 offset-1">
+                        <a href="<?= base_url() ?>admin/tambah" class="btn btn-primary mb-3 tombol-add">Tambah Anggota</a>
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">#</th>
