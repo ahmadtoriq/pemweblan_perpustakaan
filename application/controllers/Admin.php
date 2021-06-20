@@ -31,8 +31,10 @@ class Admin extends CI_Controller{
         $data['tab_title'] = "Halaman Admin";
         $data['title'] = "Data Anggota Perpustakaan";
         // $data['anggota'] = $this->AnggotaModel->getAllData();
+
         $data['anggota'] = $this->AnggotaModel->getAllJoinedData();
-        
+        // $data['anggota'] = $this->AnggotaModel->getAllData();
+
         $this->load->view('templates/header', $data);
         $this->load->view('admin/anggota', $data);
         $this->load->view('templates/footer');

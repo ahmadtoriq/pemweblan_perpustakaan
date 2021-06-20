@@ -63,14 +63,14 @@
 
             <!-- Daftar Anggota -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= base_url() ?>admin/anggota">
+                <a class="nav-link collapsed" href="<?= base_url() ?>anggota">
                     <i class="fas fa-users"></i>
                     <span>Data Anggota</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= base_url() ?>admin/anggota">
+                <a class="nav-link collapsed" href="<?= base_url() ?>buku">
                     <i class="fas fa-book-open"></i>
                     <span>Data Buku</span>
                 </a>
@@ -98,7 +98,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= base_url() ?>admin/anggota">
+                <a class="nav-link collapsed" href="<?= base_url() ?>petugas">
                     <i class="fas fa-user"></i>
                     <span>Manajemen User</span>
                 </a>

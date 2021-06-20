@@ -2,10 +2,6 @@
 
 class AnggotaModel extends CI_Model{
 
-    public $title;
-    public $content;
-    public $date;
-
     public function getAllData()
     {
         $query = $this->db->get('anggota_ci');
@@ -45,10 +41,10 @@ class AnggotaModel extends CI_Model{
         $this->db->delete('anggota_ci');
     }
 
-    public function getDataById($id)
-    {
-        return $this->db->get_where('anggota_ci', ['id' => $id])->row_array();
-    }
+    // public function getDataById($id)
+    // {
+    //     return $this->db->get_where('anggota_ci', ['id' => $id])->row_array();
+    // }
     
     public function editData()
     {
@@ -72,5 +68,56 @@ class AnggotaModel extends CI_Model{
     public function countAllAnggota()
     {
         return $this->db->get('anggota_ci')->num_rows();
+    }
+
+    public function getAnggota()
+    { 
+        $query = $this->db->get('anggota');
+        return $query->result_array();
+    }
+
+    public function getDataById($id)
+    {
+        return $this->db->get_where('anggota', ['id_anggota' => $id])->row_array();
+    }
+
+    public function insertAnggota()
+    {
+        $data = [
+            'nis' => $this->input->post('nis', true),
+            'nama_anggota' => $this->input->post('nama_anggota', true),
+            'telp_anggota' => $this->input->post('telp_anggota', true),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'tp_lhr' => $this->input->post('tp_lhr', true),
+            'tgl_lhr' => $this->input->post('tgl_lhr'),
+            'alamat_anggota' => $this->input->post('alamat_anggota', true),
+            'kelas' => $this->input->post('kelas', true)
+        ];
+
+        $this->db->insert('anggota', $data);
+    }
+
+    public function editAnggota()
+    {
+        $data = [
+            'nis' => $this->input->post('nis', true),
+            'nama_anggota' => $this->input->post('nama_anggota', true),
+            'telp_anggota' => $this->input->post('telp_anggota', true),
+            'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+            'tp_lhr' => $this->input->post('tp_lhr', true),
+            'tgl_lhr' => $this->input->post('tgl_lhr'),
+            'alamat_anggota' => $this->input->post('alamat_anggota', true),
+            'kelas' => $this->input->post('kelas', true)
+        ];
+
+        $id = $this->input->post('id_anggota');
+        $this->db->where('id_anggota', $id);
+        $this->db->update('anggota', $data);
+    }
+
+    public function deleteAnggota($id)
+    {
+        $this->db->where('id_anggota', $id);
+        $this->db->delete('anggota');
     }
 }
