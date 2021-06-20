@@ -23,7 +23,7 @@
                                 <td><?= $row['nis'] ?></td>
                                 <td><?= $row['nama_anggota'] ?></td>
 
-                                <td><?= $row['kelas'] ?></td>
+                                <td><?= $row['nama_kelas'] ?></td>
 
                                 <td style="text-align : right"">
                                         <a href=" <?= base_url() ?>anggota/detail/<?= $row['id_anggota'] ?>"

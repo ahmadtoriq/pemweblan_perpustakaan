@@ -7,6 +7,8 @@
 
                     <?= form_open('')?>
 
+                    <?= form_hidden('id_petugas', $petugas['id_petugas']) ?>
+
                     <?= form_label('Nama Petugas', 'nama_petugas') ?>
                     <?= form_input([
                         'type' => 'text',
@@ -57,7 +59,7 @@
                         <div class="col-6">
                             <?= form_label('Password', 'password') ?>
                             <?= form_input([
-                                        'type' => 'text',
+                                        'type' => 'password',
                                         'name' => 'password',
                                         'id' => 'password',
                                         'class' => 'form-control'
@@ -70,7 +72,7 @@
                         <div class="col-6">
                             <?= form_label('Konfirmasi Password', 'password_conf') ?>
                             <?= form_input([
-                                        'type' => 'text',
+                                        'type' => 'password',
                                         'name' => 'password_conf',
                                         'id' => 'password_conf',
                                         'class' => 'form-control'
@@ -78,6 +80,20 @@
                             <small class="form-text text-danger">
                                 <?= form_error('password_conf') ?>
                             </small>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-4">
+                        <?= form_label('Role', 'role') ?>
+                            <?php 
+                            $role = [
+                                1 => 'Admin',
+                                2 => 'Petugas'
+                            ];
+                            echo form_dropdown('role', $role, $petugas['role'], 'class="form-control"');
+                        ?>      
                         </div>
                     </div>
 

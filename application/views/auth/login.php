@@ -22,10 +22,10 @@
 
                                     <form class="user" method="POST" action="<?= base_url() ?>auth">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="email"
-                                                name="email" aria-describedby="emailHelp"
-                                                placeholder="Email" value="<?= set_value('email') ?>">
-                                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
+                                            <input type="text" class="form-control form-control-user" id="username"
+                                                name="username" aria-describedby="emailHelp" placeholder="Username"
+                                                value="<?= set_value('username') ?>">
+                                            <?= form_error('username', '<small class="text-danger pl-3">', '</small>') ?>
                                         </div>
 
                                         <div class="form-group">
@@ -33,23 +33,17 @@
                                                 name="password" placeholder="Password">
                                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
                                         </div>
-
-                                        <button type="submit" class="btn btn-primary btn-user btn-block warna">
-                                            Login
-                                        </button>
-                                        <hr>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-6 offset-3">
+                                                <button type="submit" class="btn btn-primary btn-user btn-block warna">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </div>
 
                                     </form>
                                     <!-- <hr> -->
-                                    <div class="text-center">
-                                        <a class="small" href="<?= base_url() ?>auth/forgot">Lupa Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <small>Belum memiliki akun? </small>
-                                        <a class="small" href="<?= base_url() ?>auth/registration">
-                                            Buat Akun!
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

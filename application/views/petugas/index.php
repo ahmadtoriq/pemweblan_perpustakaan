@@ -2,10 +2,11 @@
                 <div class="container-fluid">
 
                     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash') ?>"></div>
+    
                     <br>
                     <h2 class="text-center"><?= $title ?></h2><br>
                     <table class="table col-sm-10 offset-1">
-                        <a href="<?= base_url() ?>petugas/tambah" class="btn btn-primary mb-3 tombol-add">
+                        <a href="<?= base_url() ?>petugas/tambah" class="btn btn-primary mb-3 tombol-add admin">
                             Tambah Petugas</a>
                         <thead class="thead-light">
                             <tr>

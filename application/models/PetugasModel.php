@@ -27,14 +27,13 @@ class PetugasModel extends CI_Model{
     }
 
     public function editPetugas()
-    {
+    {       
         $data = [
             'nama_petugas' => $this->input->post('nama_petugas', true),
             'telp_petugas' => $this->input->post('telp_petugas', true),
             'username' => $this->input->post('username', true),
-            'password' => $this->input->post('password', true),
-            'password_conf' => $this->input->post('password_conf', true),
-            'role' => $this->input->post('role', true)
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+            'role' => $this->input->post('role')
         ];
 
         $id = $this->input->post('id_petugas');

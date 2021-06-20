@@ -4,10 +4,9 @@
             <div class="col-sm-10 offset-sm-1">
                 <h2 class="text-center pt-4"><?= $title ?></h2>
                 <div class="info-form"><br>
-
                     <?= form_open('')?>
 
-                    <?= form_hidden('id_anggota', $anggota['id_anggota']) ?>
+                    <?= form_hidden('id_anggota', $anggota[0]->id_anggota) ?>
 
                     <div class="row">
                         <div class="col-4">
@@ -17,7 +16,7 @@
                                 'name' => 'nis',
                                 'id' => 'nis',
                                 'class' => 'form-control',
-                                'value' => $anggota['nis'] 
+                                'value' => $anggota[0]->nis 
                             ]) ?>
                             <small class="form-text text-danger">
                                 <?= form_error('nis') ?>
@@ -33,7 +32,7 @@
                             'name' => 'nama_anggota',
                             'id' => 'nama_anggota',
                             'class' => 'form-control',
-                            'value' => $anggota['nama_anggota']
+                            'value' => $anggota[0]->nama_anggota
                             ]) ?>
                     <small class="form-text text-danger">
                         <?= form_error('nama_anggota') ?>
@@ -48,7 +47,7 @@
                                 'name' => 'tp_lhr',
                                 'id' => 'tp_lhr',
                                 'class' => 'form-control',
-                                'value' => $anggota['tp_lhr']
+                                'value' => $anggota[0]->tp_lhr
                             ]) ?>
                             <small class="form-text text-danger">
                                 <?= form_error('tp_lhr') ?>
@@ -62,7 +61,7 @@
                                 'name' => 'tgl_lhr',
                                 'id' => 'tgl_lhr',
                                 'class' => 'form-control',
-                                'value' => $anggota['tgl_lhr']
+                                'value' => $anggota[0]->tgl_lhr
                             ]) ?>
                             <small class="form-text text-danger">
                                 <?= form_error('tgl_lhr') ?>
@@ -74,13 +73,13 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="jenis_kelamin" id="L" value="Laki-Laki"
                                     class="form-check-input"
-                                    <?php echo  set_radio('jenis_kelamin', 'Laki-Laki', ($anggota['jenis_kelamin']=='Laki-Laki')?TRUE:''); ?> />
+                                    <?php echo  set_radio('jenis_kelamin', 'Laki-Laki', ($anggota[0]->jenis_kelamin =='Laki-Laki')?TRUE:''); ?> />
                                 <label for="L" class="form-check-label">Laki-Laki</label> <br>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="jenis_kelamin" id="P" value="Perempuan"
                                     class="form-check-input"
-                                    <?php echo  set_radio('jenis_kelamin', 'Perempuan', ($anggota['jenis_kelamin']=='Perempuan')?TRUE:''); ?> />
+                                    <?php echo  set_radio('jenis_kelamin', 'Perempuan', ($anggota[0]->jenis_kelamin =='Perempuan')?TRUE:''); ?> />
                                 <label for="P" class="form-check-label">Perempuan</label>
                             </div>
                             <small class="form-text text-danger">
@@ -99,33 +98,21 @@
                                 'name' => 'telp_anggota',
                                 'id' => 'telp_anggota',
                                 'class' => 'form-control',
-                                'value' => $anggota['telp_anggota']
+                                'value' => $anggota[0]->telp_anggota
                                 ]) ?>
                             <small class="form-text text-danger">
                                 <?= form_error('telp_anggota') ?>
                             </small>
                         </div>
-                    </div>
-
-                    <br>
-
-                    <div class="row">
-                        <div class="col-5">
+                        <div class="col-6">
                             <?= form_label('Kelas', 'kelas') ?>
-                            <?= form_input([
-                                'type' => 'text',
-                                'name' => 'kelas',
-                                'id' => 'kelas',
-                                'class' => 'form-control',
-                                'value' => $anggota['kelas']
-                                ]) ?>
-                            <?php /*
+                            <?php 
                                 foreach ($kelas as $row) {
                                     $options[$row['id_kelas']] = $row['nama_kelas'];
                                 }
 
-                                echo form_dropdown('kelas', $options, $anggota['kelas'], 'class="form-control " id="kelas"');
-                                */
+                                echo form_dropdown('kelas', $options, $anggota[0]->id_kelas, 'class="form-control " id="kelas"');
+                            
                                 ?>
                             <small class="form-text text-danger">
                                 <?= form_error('kelas') ?>
@@ -142,7 +129,7 @@
                             'class' => 'form-control',
                             'rows' => '2',
                             'cols' => '30',
-                            'value' => $anggota['alamat_anggota']
+                            'value' => $anggota[0]->alamat_anggota
                         ], '', [
                             'style' => 'resize:none'
                         ]) ?>

@@ -71,8 +71,15 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?= base_url() ?>buku">
-                    <i class="fas fa-book-open"></i>
+                <i class="fas fa-book-open"></i>
                     <span>Data Buku</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= base_url() ?>kelas"> 
+                    <i class="fas fa-school"></i>
+                    <span>Data Kelas</span>
                 </a>
             </li>
 

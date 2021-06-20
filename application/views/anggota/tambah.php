@@ -70,13 +70,13 @@
                         <div class="col-4">
                             <?= form_label('Jenis Kelamin', 'jenis_kelamin') ?> <br>
                             <div class="form-check form-check-inline">
-                                <input type="radio" name="jenis_kelamin" id="L" value="Laki-Laki" class="form-check-input"
-                                    <?php echo  set_radio('jenis_kelamin', 'Laki-Laki'); ?> />
+                                <input type="radio" name="jenis_kelamin" id="L" value="Laki-Laki"
+                                    class="form-check-input" <?php echo  set_radio('jenis_kelamin', 'Laki-Laki'); ?> />
                                 <label for="L" class="form-check-label">Laki-Laki</label> <br>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="radio" name="jenis_kelamin" id="P" value="Perempuan" class="form-check-input"
-                                    <?php echo  set_radio('jenis_kelamin', 'Perempuan'); ?> />
+                                <input type="radio" name="jenis_kelamin" id="P" value="Perempuan"
+                                    class="form-check-input" <?php echo  set_radio('jenis_kelamin', 'Perempuan'); ?> />
                                 <label for="P" class="form-check-label">Perempuan</label>
                             </div>
                             <small class="form-text text-danger">
@@ -104,22 +104,14 @@
 
                         <div class="col-6 offset-1">
                             <?= form_label('Kelas', 'kelas') ?>
-                            <?= form_input([
-                                'type' => 'text',
-                                'name' => 'kelas',
-                                'id' => 'kelas',
-                                'class' => 'form-control',
-                                'value' => set_value("kelas")
-                                ]) ?>
                             <?php
-                            /* 
+                            
                                 foreach ($kelas as $row) {
                                     $options[$row['id_kelas']] = $row['nama_kelas'];
                                 }
                                 $newoptions = array(null => 'Pilih kelas...') + $options;
 
                                 echo form_dropdown('kelas', $newoptions, set_value('kelas'), 'class="form-control " id="kelas"')
-                            */
                                 ?>
                             <small class="form-text text-danger">
                                 <?= form_error('kelas') ?>

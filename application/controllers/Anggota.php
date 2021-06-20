@@ -20,12 +20,11 @@ class Anggota extends CI_Controller{
     {
         $data['tab_title'] = "Halaman Admin";
         $data['title'] = "Data Anggota Perpustakaan";
-        // $data['user'] = $this->session->userdata['name'];
 
-        // $data['total_anggota'] = $this->AnggotaModel->countAllAnggota();
-        // $data['total_kelas'] = $this->KelasModel->countKelas();
-
-        $data['anggota'] = $this->AnggotaModel->getAnggota();
+        //data anggota-kelas
+        $data['anggota'] = $this->AnggotaModel->getAnggotaKelas();
+        //data anggota
+        // $data['anggota'] = $this->AnggotaModel->getAnggota();
         
         $this->load->view('templates/header', $data);
         $this->load->view('anggota/index', $data);
@@ -57,7 +56,7 @@ class Anggota extends CI_Controller{
         if ($this->form_validation->run() == FALSE){
             $data['tab_title'] = "Registrasi";
             $data['title'] = "Form Registrasi Anggota";
-            // $data['kelas'] = $this->KelasModel->getAllData();
+            $data['kelas'] = $this->KelasModel->getKelas();
             
             $this->load->view('templates/header', $data);
             $this->load->view('anggota/tambah', $data);
@@ -75,7 +74,9 @@ class Anggota extends CI_Controller{
     {
         $data['tab_title'] = "Edit Data";
         $data['title'] = "Edit Data Anggota";
-        $data['anggota'] = $this->AnggotaModel->getDataById($id);
+        // $data['anggota'] = $this->AnggotaModel->getDataById($id);
+        $data['anggota'] = $this->AnggotaModel->getJoinedDataById($id);
+        $data['kelas'] = $this->KelasModel->getKelas();
 
         $this->form_validation->set_rules('nis', 'NIS', 'required');
         $this->form_validation->set_rules('nama_anggota', 'Nama', 'required');

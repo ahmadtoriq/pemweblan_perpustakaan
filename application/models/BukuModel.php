@@ -2,6 +2,11 @@
 
 class BukuModel extends CI_Model{
 
+    public function countBuku()
+    {
+        return $this->db->get('buku')->num_rows();
+    }
+
     public function getBuku()
     { 
         $query = $this->db->get('buku');

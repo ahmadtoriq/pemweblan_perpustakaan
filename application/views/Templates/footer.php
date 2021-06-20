@@ -45,7 +45,7 @@
 <script src="<?= base_url() ?>assets/js/sweetalert2.js"></script>
 
 <!-- <script src="<?= base_url() ?>assets/js/myscript.js"></script> -->
-<script src="<?= base_url() ?>assets/js/swal.js"></script>
+<script src="<?= base_url() ?>assets/js/sweetalert.js"></script>
 
 </body>
 

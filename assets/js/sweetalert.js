@@ -4,7 +4,7 @@ const flashData = $('.flash-data').data('flashdata');
 if(flashData){
     Swal.fire({
         title: 'Berhasil ',
-        text: 'Data Anggota Berhasil ' + flashData,
+        text: 'Data Berhasil ' + flashData,
         icon: 'success'
     });
 }
